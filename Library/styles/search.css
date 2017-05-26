@@ -1,0 +1,37 @@
+.search-container{
+	padding-top: 135px;
+	padding-left: 15%;
+	font-family: Arial;
+}
+
+
+
+.search-result-set{
+	text-align: -webkit-center;
+	margin-top: 3%;
+}
+
+.result-table th{
+	background-color: #398a39;
+	color: white; 
+	padding: 10px;
+	padding-right: 80px;
+}
+
+.result-table tr{
+    border-collapse: collapse; 
+}
+
+
+.search-table-row:nth-child(even) , .search-table-row:nth-child(1){
+	background-color: rgba(150,150,150,.3);
+
+}
+
+#category-search-display{
+	text-align: -webkit-center;
+}
+
+.search-form-container{
+	text-align: -webkit-center;
+}

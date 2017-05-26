@@ -5,7 +5,7 @@
 		global $errorUserNameOrPassword;
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$customer = mysqli_fetch_assoc(dataBaseLogin($username,$password));
+		$customer = dataBaseLogin($username,$password);
 		if(sizeof($customer) > 0){
 			if(substr($username, 0, 5 ) === "Admin"){
 				$_SESSION['admin'] = $username;

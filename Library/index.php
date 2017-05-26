@@ -2,6 +2,8 @@
 	session_start();
 	include 'connections/database.php';
 	include 'components/login.php';
+	include 'components/register.php';	
+	include 'components/search.php';
 ?>
 
 <!DOCTYPE html>
