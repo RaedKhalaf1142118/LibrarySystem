@@ -84,13 +84,13 @@
 						<tr>
 							<td>
 								<label>Bank Name</label>
-								<input id="Bank-AccountID" placeholder="Bank-AccountID" type="text" name="BankName" required>
+								<input id="Bank-AccountID" placeholder="Bank Name" type="text" name="BankName" required>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<label>creditCard number</label>
-								<input id="Bank-AccountID" placeholder="Bank-AccountID" type="number" name="creditCard" required>
+								<input id="Bank-AccountID" placeholder="creditCard number" type="number" name="creditCard" required>
 							</td>
 						</tr>
 						<tr>

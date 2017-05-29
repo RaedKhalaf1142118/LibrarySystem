@@ -9,6 +9,9 @@
 	include 'components/viewMessages.php';
 	include 'components/addBook.php';
 	include 'components/bookDescription.php';
+	include 'components/listUsers.php';
+	include 'components/editBook.php';
+	include 'components/requestSubscription.php';
 ?>
 
 <!DOCTYPE html>

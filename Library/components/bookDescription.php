@@ -8,6 +8,18 @@
 			}
 			if(isset($_GET['id'])){
 				$id = $_GET['id'];
+				if(isset($_GET['removeBook'])){
+					removeBook($id);
+					header("Refresh:0 ; url=index.php?display=search");
+				}
+				if(isset($_GET['DisableBook'])){
+					enableBook($id);
+					header("Refresh:0 ; url=index.php?display=search");
+				}
+				if(isset($_GET['EnableBook'])){
+					disableBook($id);
+					header("Refresh:0 ; url=index.php?display=search");
+				}
 				$book = getBookById($id);
 				displayBookDescriptionView($book);
 			}else{
@@ -49,6 +61,21 @@
 										<label>ISBN : <?php echo $book['ISBN']; ?></label>
 									</td>
 								</tr>
+								<tr>
+									<td>
+										<label>publish date : <?php echo $book['publishDate']; ?></label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Rating : <?php echo substr(getRatingForBook($book['ISBN']),0,3); ?> Stars</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<label>Copy# : <?php getCopySize($book['ISBN']) ?></label>
+									</td>
+								</tr>
 							</table>
 						</div>
 						<div class="book-description-operations">
@@ -77,7 +104,7 @@
 											<?php
 										}else{
 											?>
-											<a href="index.php?display=bookDescription&id=<?php echo $book['ISBN']; ?>&EnsableBook=true">
+											<a href="index.php?display=bookDescription&id=<?php echo $book['ISBN']; ?>&EnableBook=true">
 												<li>
 													Enable
 												</li>

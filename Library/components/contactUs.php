@@ -38,8 +38,8 @@
 								</label>
 							</td>
 							<td>
-								<textarea name="messageBody" required>
-									The Message Body
+								<textarea name="messageBody" required placeholder="Message body">
+									
 								</textarea>
 							</td>
 						</tr>

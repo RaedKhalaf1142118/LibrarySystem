@@ -1,5 +1,11 @@
 <?php
 	switch ($_GET['display']) {
+		case 'EditBook':
+			displayEditBook();
+			break;
+		case 'listUsers':
+			displayUsers();
+			break;
 		case 'bookDescription':
 			displayBookDescription();
 			break;
@@ -19,6 +25,7 @@
 			displayRegister();
 			break;
 		case 'requestSubscription':
+			displayRequestSubscription();
 			break;
 		case 'contactUs':
 			displayContactUs();

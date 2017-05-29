@@ -1,0 +1,29 @@
+.allUsers-container{
+	padding-top: 150px;
+	margin-left: 16%;
+	text-align: -webkit-center;
+}
+
+.allUsers-table-container{
+	padding: 40px;
+	margin-left: 120px;
+	margin-right: 120px;
+	background-color: white;
+}
+
+.allUsers-table{
+	border-collapse: collapse;
+}
+
+.allUsers-table td{
+	border: 2px gray solid;
+	padding: 7px 15px;
+}
+
+.allUsers-table thead{
+	background-color: #bbb4b4;
+}
+
+.allUsers-table tr:hover{
+	background-color: #dadada;
+}

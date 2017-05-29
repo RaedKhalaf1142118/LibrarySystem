@@ -20,11 +20,11 @@
 					<th>ISBN</th>
 					<th>Name</th>
 					<th>Authors</th>
-					<th>publishers</th>
-					<th>publishDate</th>
+					<th>Publishers</th>
+					<th>Publish Date</th>
 					<th>Edition</th>
-					<th>disabled</th>
-					<th>genra</th>
+					<th>Enabled/Disabled</th>
+					<th>genre</th>
 				</thead>
 		<?php
 	}
@@ -119,7 +119,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label>publishers</label>
+									<label>Publishers</label>
 								</td>
 								<td>
 									<input type="text" name="publishers" value="<?php echo $publishers ?>">
@@ -136,7 +136,7 @@
 							<tr>
 								<td></td>
 								<td>
-									<input type="submit" name="submit" value="searh"> 
+									<input type="submit" name="submit" value="Search"> 
 								</td>
 							</tr>
 						</table>

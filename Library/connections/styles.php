@@ -8,3 +8,5 @@
 <link rel="stylesheet" type="text/css" href="styles/viewMessages.css">
 <link rel="stylesheet" type="text/css" href="styles/addBook.css">
 <link rel="stylesheet" type="text/css" href="styles/bookDescription.css">
+<link rel="stylesheet" type="text/css" href="styles/listUsers.css">
+<link rel="stylesheet" type="text/css" href="styles/requestSubscription.css">

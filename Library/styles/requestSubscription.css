@@ -1,0 +1,28 @@
+.request-subscription-container{
+	padding-top: 235px;
+	margin-left: 37%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #8a5555;
+}
+
+.request-subscription-form-container{
+	width: 62%;
+}
+
+.request-subscription-form{
+	background-color: rgba(255,100,100,.4);
+	border: 2px rgba(255,0,0,.5) solid;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+.request-subscription-confermation{
+	width: 97%;
+	background-color: rgba(100,255,100,.4);
+	border: 2px rgba(0,255,0,.5) solid;
+	border-radius: 8px;
+	padding: 10px;
+	margin-top: 20px;
+	text-align: center;
+	color: green;
+}

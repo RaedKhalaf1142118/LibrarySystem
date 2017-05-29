@@ -29,7 +29,7 @@
 				?>
 					<a href="index.php?display=login">
 						<li class="main-nav-item <?php echo strcmp($_GET['display'],'login')==0?"selected-nav-item":""?>">
-						 	login 
+						 	log in 
 						</li>
 					</a>
 
@@ -61,6 +61,11 @@
 							 Search
 						</li>
 					</a>
+					<a href="index.php?display=listUsers">
+						<li class="main-nav-item <?php echo strcmp($_GET['display'],'listUsers')==0?"selected-nav-item":""?>">
+							All Users
+						</li>
+					</a>
 				<?php
 			}
 		?>
@@ -76,14 +81,20 @@
 						 Search
 					</li>
 				</a>
-				<a href="index.php?display=requestSubscription">
-					<li class="main-nav-item <?php echo strcmp($_GET['display'],'requestSubscription')==0?"selected-nav-item":""?>">
-						 Request subscription
-					</li>
-				</a>
+				<?php
+					if(!isPremiumAccount($_SESSION['user'])){
+						?>
+						<a href="index.php?display=requestSubscription">
+							<li class="main-nav-item <?php echo strcmp($_GET['display'],'requestSubscription')==0?"selected-nav-item":""?>">
+								 Subscribe
+							</li>
+						</a>
+						<?php
+					}
+				?>
 				<a href="index.php?display=contactUs">
 					<li class="main-nav-item <?php echo strcmp($_GET['display'],'contactUs')==0?"selected-nav-item":""?>">
-						contact us
+						Contact us
 					</li>
 				</a>
 			<?php 
