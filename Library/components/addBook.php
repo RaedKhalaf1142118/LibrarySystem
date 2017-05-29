@@ -9,7 +9,8 @@
 				$publishDate = $_POST['publishDate'];
 				$edition = $_POST['edition'];
 				$genre = $_POST['genre'];
-				addBookToDB($ISBN,$name,$authors,$publishers,$publishDate,$edition,$genre);
+				$numberOfCopies = $_POST['amount'];
+				addBookToDB($ISBN,$name,$authors,$publishers,$publishDate,$edition,$genre,$amount);
 				header("Refresh:0 ; url=index.php?display=search");
 			}else
 				displayAddBookForm();
@@ -89,6 +90,14 @@
 											}
 										 ?>
 									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>Amount</label>
+								</td>
+								<td>
+									<input type="number" name="amount" min="0" required>
 								</td>
 							</tr>
 							<tr class="submit-row">

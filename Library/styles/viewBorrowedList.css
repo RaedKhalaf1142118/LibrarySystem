@@ -1,0 +1,14 @@
+.book-list-container{
+	padding-top: 140px;
+	margin-left: 20%;
+	text-align: -webkit-center;
+}
+
+.book-table td{
+	padding: 10px 25px;
+	border: 2px gray solid;
+}
+
+.book-table thead td{
+	background-color: #cccccc;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2017 at 04:00 PM
+-- Generation Time: May 30, 2017 at 12:32 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -96,17 +96,17 @@ CREATE TABLE `book` (
   `publishDate` date DEFAULT NULL,
   `edition` int(11) DEFAULT NULL,
   `disabled` tinyint(1) DEFAULT NULL,
-  `genraId` int(11) DEFAULT NULL
+  `genraId` int(11) DEFAULT NULL,
+  `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`ISBN`, `name`, `authors`, `publishers`, `publishDate`, `edition`, `disabled`, `genraId`) VALUES
-(123, 'Raed', 'Raed', 'Raed', '0001-01-01', 2, 0, 1),
-(1425, 'Raed Khalaf2', 'Laith', 'Luai', '2017-12-31', 2, 0, 1),
-(877097, 'Raed Testing', 'Raedsknfd', 'OJW', '2013-10-27', 4, 0, 3);
+INSERT INTO `book` (`ISBN`, `name`, `authors`, `publishers`, `publishDate`, `edition`, `disabled`, `genraId`, `amount`) VALUES
+(1425, 'Raed Khalaf2', 'Laith', 'Luai', '2017-12-31', 2, 0, 1, 7),
+(877097, 'RaedTEST2', 'Raedsknfd', 'OJW', '2013-10-27', 4, 0, 3, 9);
 
 -- --------------------------------------------------------
 
@@ -121,6 +121,16 @@ CREATE TABLE `bookcopy` (
   `bookId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `bookcopy`
+--
+
+INSERT INTO `bookcopy` (`borrowedDate`, `dueDate`, `id`, `bookId`) VALUES
+('2017-05-29', '2020-01-01', 22899, 1425),
+('2017-05-29', '2020-01-01', 37528, 1425),
+('2017-05-29', '2020-01-01', 123812, 877097),
+('2017-05-29', '2020-01-01', 2147483647, 877097);
+
 -- --------------------------------------------------------
 
 --
@@ -130,8 +140,19 @@ CREATE TABLE `bookcopy` (
 CREATE TABLE `borrowingmessage` (
   `id` int(11) NOT NULL,
   `userID` int(11) DEFAULT NULL,
-  `BookID` int(11) DEFAULT NULL
+  `BookID` int(11) DEFAULT NULL,
+  `marked` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `borrowingmessage`
+--
+
+INSERT INTO `borrowingmessage` (`id`, `userID`, `BookID`, `marked`) VALUES
+(22899, 2147483647, 1425, 1),
+(37528, 3610388, 1425, 1),
+(123812, 3610388, 877097, 1),
+(2147483647, 2147483647, 877097, 1);
 
 -- --------------------------------------------------------
 
@@ -143,6 +164,14 @@ CREATE TABLE `borrows` (
   `userId` int(11) NOT NULL,
   `bookcopyId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `borrows`
+--
+
+INSERT INTO `borrows` (`userId`, `bookcopyId`) VALUES
+(3610388, 37528),
+(3610388, 123812);
 
 -- --------------------------------------------------------
 
@@ -167,8 +196,16 @@ CREATE TABLE `deliveryman` (
   `fullname` char(150) DEFAULT NULL,
   `id` int(11) NOT NULL,
   `salary` double DEFAULT NULL,
-  `phoneNumber` char(100) DEFAULT NULL
+  `phoneNumber` char(100) DEFAULT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `deliveryman`
+--
+
+INSERT INTO `deliveryman` (`username`, `fullname`, `id`, `salary`, `phoneNumber`, `password`) VALUES
+('DeliverRaed', 'Raed Khalaf', 1142118, 2500, '0598303257', 'Rk23144132');
 
 -- --------------------------------------------------------
 
@@ -249,7 +286,7 @@ CREATE TABLE `systemuser` (
 
 INSERT INTO `systemuser` (`id`, `fullName`, `email`, `dateOfBirth`, `address`, `phoneNumber`, `accountId`, `bankAccountID`, `isFeasible`) VALUES
 (3610388, 'MohammedAli', 'Mohammed@mohammed.com', '2012-12-28', 'Birzeit', '953245', 43214234, 3141243, 1),
-(2147483647, 'raed', 'Raed.Khalaf@exalt.ps', '2015-10-30', 'Ramallah', '0598303257', 1142118, 1142118, 1);
+(2147483647, 'raed', 'Raed.Khalaf@exalt.ps', '2015-10-30', 'Ramallah', '0598303257', 1142118, 1142118, 2);
 
 -- --------------------------------------------------------
 

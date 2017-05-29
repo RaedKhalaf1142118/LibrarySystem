@@ -25,6 +25,7 @@
 					<th>Edition</th>
 					<th>Enabled/Disabled</th>
 					<th>genre</th>
+					<th>Amount</th>
 				</thead>
 		<?php
 	}
@@ -66,6 +67,9 @@
 					</td>
 					<td>
 						<?php echo getGenraName($book['genraId'])?>
+					</td>
+					<td>
+						<?php echo $book['amount']; ?>
 					</td>
 				</tr>
 			<?php 

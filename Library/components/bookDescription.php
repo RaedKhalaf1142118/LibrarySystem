@@ -20,6 +20,10 @@
 					disableBook($id);
 					header("Refresh:0 ; url=index.php?display=search");
 				}
+				if (isset($_GET['borrowBook'])) {
+					borrowBook($id,getUserByUsername($_SESSION['user']));
+					header("Refresh:0;url=index.php?display=search");
+				}
 				$book = getBookById($id);
 				displayBookDescriptionView($book);
 			}else{
@@ -73,7 +77,7 @@
 								</tr>
 								<tr>
 									<td>
-										<label>Copy# : <?php getCopySize($book['ISBN']) ?></label>
+										<label>Copy# : <?php echo $book['amount'] ?></label>
 									</td>
 								</tr>
 							</table>
@@ -118,12 +122,28 @@
 													Open SoftCopy
 												</li>
 											</a>
-											<a href="index.php?display=bookDescription&id=<?php echo $book['ISBN']; ?>"">
+											<?php 
+											if(!$book['disabled']){
+											?>
+											<a href="index.php?display=bookDescription&id=<?php echo $book['ISBN'];?>&borrowBook=true" >
 												<li>
 													Borrow Book
 												</li>
 											</a>
-										<?php
+											<?php 
+											}else if($book['amount'] > 0){
+												?>
+													<li>
+														Disabled
+													</li>
+												<?php
+											}else{
+												?>
+												<li>
+													Not Available
+												</li>
+												<?php
+											}											
 									}
 								?>
 							</ul>

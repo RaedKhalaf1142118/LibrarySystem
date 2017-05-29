@@ -15,6 +15,15 @@
 				$errorUserNameOrPassword = true;
 				displayLoginForm();
 			}
+		}else if(substr($username, 0, 7 ) === "Deliver"){
+			$customer = dataBaseDeliverLogin($username,$password);
+			if($customer){
+				$_SESSION['deliverMan'] = $username;
+				header("Refresh:0 ; url=index.php?display=borrowingMessages");
+			}else{
+				$errorUserNameOrPassword = true;
+				displayLoginForm();
+			}
 		}else{
 			$customer = dataBaseAccountLogin($username,$password);
 			if($customer){

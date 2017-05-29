@@ -12,6 +12,8 @@
 	include 'components/listUsers.php';
 	include 'components/editBook.php';
 	include 'components/requestSubscription.php';
+	include 'components/viewBorrowedList.php';
+	include 'components/borrowingMessages.php';
 ?>
 
 <!DOCTYPE html>

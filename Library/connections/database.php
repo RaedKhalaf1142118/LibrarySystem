@@ -12,4 +12,5 @@
 	include 'connections/applicationServer/genreServer.php';
 	include 'connections/applicationServer/BookServer.php';
 	include 'connections/applicationServer/reviewRateServer.php';
+	include 'connections/applicationServer/deliverManServer.php';
 ?>

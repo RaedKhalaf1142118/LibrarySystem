@@ -17,7 +17,16 @@
 	?>
 	<ul class="main-nav-list">
 		<?php
-			if(isset($_SESSION['admin']) || isset($_SESSION['user'])){
+			if(isset($_SESSION['deliverMan'])){
+				?>
+				<a href="index.php?display=borrowingMessages">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'],'borrowingMessages')==0?"selected-nav-item":""?>">
+						Borrowing messages
+					</li>
+				</a>
+				<?php
+			}
+			if(isset($_SESSION['admin']) || isset($_SESSION['user']) || isset($_SESSION['deliverMan'])){
 				?>
 					<a href="index.php?display=logout">
 						<li class="main-nav-item <?php echo strcmp($_GET['display'],'login')==0?"selected-nav-item":""?>">
@@ -25,7 +34,7 @@
 						</li>
 					</a>
 				<?php
-			}else{
+			}else if(!isset($_SESSION['deliverMan'])){
 				?>
 					<a href="index.php?display=login">
 						<li class="main-nav-item <?php echo strcmp($_GET['display'],'login')==0?"selected-nav-item":""?>">
@@ -95,6 +104,11 @@
 				<a href="index.php?display=contactUs">
 					<li class="main-nav-item <?php echo strcmp($_GET['display'],'contactUs')==0?"selected-nav-item":""?>">
 						Contact us
+					</li>
+				</a>
+				<a href="index.php?display=viewBorrows">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'],'viewBorrows')==0?"selected-nav-item":""?>">
+						Borrows list
 					</li>
 				</a>
 			<?php 

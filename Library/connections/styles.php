@@ -10,3 +10,5 @@
 <link rel="stylesheet" type="text/css" href="styles/bookDescription.css">
 <link rel="stylesheet" type="text/css" href="styles/listUsers.css">
 <link rel="stylesheet" type="text/css" href="styles/requestSubscription.css">
+<link rel="stylesheet" type="text/css" href="styles/viewBorrowedList.css">
+<link rel="stylesheet" type="text/css" href="styles/borrowingMessages.css">

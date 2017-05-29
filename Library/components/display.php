@@ -1,5 +1,11 @@
 <?php
 	switch ($_GET['display']) {
+		case 'borrowingMessages':
+			displayBorrowingMessages();
+			break;
+		case 'viewBorrows':
+			displayAllBorrows();
+			break;
 		case 'EditBook':
 			displayEditBook();
 			break;
