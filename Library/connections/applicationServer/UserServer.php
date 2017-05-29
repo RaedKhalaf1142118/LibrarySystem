@@ -4,8 +4,7 @@
 		$resultSet = mysqli_query($database,"SELECT * FROM account a WHERE a.username = '{$username}'");
 		$accountNumber = mysqli_fetch_assoc($resultSet)['accountNumber'];
 		$resultSet = mysqli_query($database,"SELECT * FROM systemuser s WHERE s.accountId =  {$accountNumber}");
-		$row = mysqli_fetch_assoc($resultSet);
-		return $row;
+		return  mysqli_fetch_assoc($resultSet);
 	}
 
 	function getAccountByUsername($username){

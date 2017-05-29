@@ -11,7 +11,10 @@
 			$telephone = $_POST['telephone'];
 			$bankID = $_POST['Bank-AccountID'];
 			$accountID = $_POST['accountID'];
-			registerAccount($name,$username,$password,$address,$birthDate,$email,$telephone,$bankID,$accountID);
+			$creditCard = $_POST['creditCard'];
+			$bankName = $_POST['BankName'];
+			registerAccount($name,$username,$password,$address,$birthDate,$email,$telephone,$bankID,$accountID,$creditCard,$bankName);
+			$_SESSION['user'] = $username;
 			header("Refresh:0 ; index.php?display=search");
 		}else{
 			displayRegisterForm();
@@ -76,6 +79,18 @@
 							<td>
 								<label>Bank AccountID</label>
 								<input id="Bank-AccountID" placeholder="Bank-AccountID" type="number" name="Bank-AccountID" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Bank Name</label>
+								<input id="Bank-AccountID" placeholder="Bank-AccountID" type="text" name="BankName" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>creditCard number</label>
+								<input id="Bank-AccountID" placeholder="Bank-AccountID" type="number" name="creditCard" required>
 							</td>
 						</tr>
 						<tr>

@@ -21,5 +21,4 @@
 		$resultSet = mysqli_query($database,"SELECT * FROM genre g where g.id = {$ID}");
 		return mysqli_fetch_assoc($resultSet)['title'];
 	}
-
 ?>

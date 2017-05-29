@@ -1,0 +1,76 @@
+.book-description-container{
+	padding-top: 130px;
+	margin-left: 15%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.book-description{
+	padding: 100px 40px;
+	margin-left: 100px;
+	margin-right: 100px;
+	background-color: white;
+}
+
+.book-img{
+	width: 150px;
+	height: 180px;
+	float: left;
+}
+
+.book-img-container{
+	display: inline-block;
+}
+
+.book-des-table{
+	padding-left: 10px;
+}
+
+.rate-review-book-des{
+	margin-top: 100px;
+}
+
+.reviews-container{
+	text-align: -webkit-center;
+}
+
+.add-review-rate{
+	padding-top: 20px;
+}
+
+.review-submit-btn{
+	width: 100px;
+}
+
+.review-submit-btn:hover{
+	cursor: pointer;
+}
+
+.add-review-rate input{
+	width: 100px;
+	padding-top: 10px;
+}
+
+.reviews-container fieldset{
+	width: 30%;
+	margin: 30px;
+}
+
+.book-description-operations{
+	float: right;
+}
+
+.book-description-operations ul{
+	list-style-type: none;
+}
+
+.book-description-operations li{
+	padding: 15px 20px;
+	color: #8e4d4d;
+	margin: 10px;
+	border-radius: 6px;
+	background-color: rgb(204,204,204);
+}
+
+.book-description-operations li:hover{
+	background-color: rgb(180,180,190);
+}

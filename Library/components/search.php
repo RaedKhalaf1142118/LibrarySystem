@@ -39,16 +39,36 @@
 
 	function displayRows($books){
 		foreach ($books as $book) {
-			echo "<tr>";
-			echo "<td>".$book['ISBN']."</td>";
-			echo "<td>".$book['name']."</td>";
-			echo "<td>".$book['authors']."</td>";
-			echo "<td>".$book['publishers']."</td>";
-			echo "<td>".$book['publishDate']."</td>";
-			echo "<td>".$book['edition']."</td>";
-			echo "<td>".$book['disabled']."</td>";
-			echo "<td>".getGenraName($book['genraId'])."</td>";
-			echo "</tr>";
+			?>	
+				<tr>
+					<td>
+						<a href="index.php?display=bookDescription&id=<?php echo $book['ISBN'] ?>">
+							<?php echo $book['ISBN']; ?>
+						</a>
+					</td>
+					<td>
+						<?php echo $book['name']; ?>
+					</td>
+					<td>
+						<?php echo $book['authors']; ?>
+					</td>
+					<td>
+						<?php echo $book['publishers']; ?>
+					</td>
+					<td>
+						<?php echo $book['publishDate'] ?>
+					</td>
+					<td>
+						<?php echo $book['edition'] ?>
+					</td>
+					<td>
+						<?php echo $book['disabled']==0?"enabled":"disabled"  ?>
+					</td>
+					<td>
+						<?php echo getGenraName($book['genraId'])?>
+					</td>
+				</tr>
+			<?php 
 		}
 	}
 

@@ -7,6 +7,8 @@
 	include 'components/contactUs.php';
 	include 'components/editAccount.php';
 	include 'components/viewMessages.php';
+	include 'components/addBook.php';
+	include 'components/bookDescription.php';
 ?>
 
 <!DOCTYPE html>

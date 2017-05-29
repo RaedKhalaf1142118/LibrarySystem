@@ -9,4 +9,7 @@
 	include 'connections/applicationServer/contactUsServer.php';
 	include 'connections/applicationServer/editAccountServer.php';
 	include 'connections/applicationServer/UserServer.php';
+	include 'connections/applicationServer/genreServer.php';
+	include 'connections/applicationServer/BookServer.php';
+	include 'connections/applicationServer/reviewRateServer.php';
 ?>

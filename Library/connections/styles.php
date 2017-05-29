@@ -6,3 +6,5 @@
 <link rel="stylesheet" type="text/css" href="styles/search.css">
 <link rel="stylesheet" type="text/css" href="styles/contactUs.css">
 <link rel="stylesheet" type="text/css" href="styles/viewMessages.css">
+<link rel="stylesheet" type="text/css" href="styles/addBook.css">
+<link rel="stylesheet" type="text/css" href="styles/bookDescription.css">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2017 at 10:54 AM
+-- Generation Time: May 29, 2017 at 04:00 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `account` (
   `accountNumber` int(11) NOT NULL,
   `username` char(100) DEFAULT NULL,
-  `passoword` char(100) DEFAULT NULL
+  `password` char(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`accountNumber`, `username`, `passoword`) VALUES
-(1142118, '1142118', 'Rk23144132');
+INSERT INTO `account` (`accountNumber`, `username`, `password`) VALUES
+(1142118, '1142118', 'Rk23144132'),
+(43214234, 'MohAliKh', 'Rk23144132');
 
 -- --------------------------------------------------------
 
@@ -50,15 +51,16 @@ CREATE TABLE `admin` (
   `name` char(100) DEFAULT NULL,
   `id` int(11) NOT NULL,
   `salary` double DEFAULT NULL,
-  `phoneNumber` char(30) DEFAULT NULL
+  `phoneNumber` char(30) DEFAULT NULL,
+  `password` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `name`, `id`, `salary`, `phoneNumber`) VALUES
-('adminRaed', 'Raed Khalaf', 1142118, 2500, '598303257');
+INSERT INTO `admin` (`username`, `name`, `id`, `salary`, `phoneNumber`, `password`) VALUES
+('adminRaed', 'Raed Khalaf', 1142118, 2500, '598303257', 'Rk23144132');
 
 -- --------------------------------------------------------
 
@@ -77,7 +79,8 @@ CREATE TABLE `bankaccount` (
 --
 
 INSERT INTO `bankaccount` (`accountNumber`, `creditCardNumber`, `bankName`) VALUES
-(1142118, 1142118, 'Palestine');
+(1142118, 1142118, 'Palestine'),
+(3141243, 31243123, 'Palestine');
 
 -- --------------------------------------------------------
 
@@ -101,7 +104,9 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`ISBN`, `name`, `authors`, `publishers`, `publishDate`, `edition`, `disabled`, `genraId`) VALUES
-(123, 'Raed', 'Raed', 'Raed', '0001-01-01', 2, 0, 1);
+(123, 'Raed', 'Raed', 'Raed', '0001-01-01', 2, 0, 1),
+(1425, 'Raed Khalaf2', 'Laith', 'Luai', '2017-12-31', 2, 0, 1),
+(877097, 'Raed Testing', 'Raedsknfd', 'OJW', '2013-10-27', 4, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -181,7 +186,10 @@ CREATE TABLE `genre` (
 --
 
 INSERT INTO `genre` (`id`, `title`) VALUES
-(1, 'education');
+(1, 'education'),
+(2, 'Science'),
+(3, 'space'),
+(4, 'literature');
 
 -- --------------------------------------------------------
 
@@ -202,11 +210,20 @@ CREATE TABLE `marks` (
 
 CREATE TABLE `ratereview` (
   `id` int(11) NOT NULL,
-  `raiting` int(11) DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
   `review` text,
   `userId` int(11) DEFAULT NULL,
   `bookId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ratereview`
+--
+
+INSERT INTO `ratereview` (`id`, `rating`, `review`, `userId`, `bookId`) VALUES
+(1, 4, 'This Book is good', 2147483647, 877097),
+(2, 3, '													Write Your Review Here\r\n												', 3610388, 877097),
+(3, 5, '													Write Your Review Here\r\n												', 3610388, 877097);
 
 -- --------------------------------------------------------
 
@@ -231,6 +248,7 @@ CREATE TABLE `systemuser` (
 --
 
 INSERT INTO `systemuser` (`id`, `fullName`, `email`, `dateOfBirth`, `address`, `phoneNumber`, `accountId`, `bankAccountID`, `isFeasible`) VALUES
+(3610388, 'MohammedAli', 'Mohammed@mohammed.com', '2012-12-28', 'Birzeit', '953245', 43214234, 3141243, 1),
 (2147483647, 'raed', 'Raed.Khalaf@exalt.ps', '2015-10-30', 'Ramallah', '0598303257', 1142118, 1142118, 1);
 
 -- --------------------------------------------------------
@@ -252,7 +270,8 @@ CREATE TABLE `toadminmessage` (
 --
 
 INSERT INTO `toadminmessage` (`id`, `subject`, `contentText`, `sendDate`, `userId`) VALUES
-(1, 'Service', 'The webSite is soo cool', '2017-05-29', 2147483647);
+(1, 'Service', 'The webSite is soo cool', '2017-05-29', 2147483647),
+(3, 'Service', 'This is the Last Message', '2017-05-29', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -360,10 +379,15 @@ ALTER TABLE `toadminmessage`
 --
 
 --
+-- AUTO_INCREMENT for table `ratereview`
+--
+ALTER TABLE `ratereview`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `toadminmessage`
 --
 ALTER TABLE `toadminmessage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --

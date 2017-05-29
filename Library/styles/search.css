@@ -35,3 +35,7 @@
 .search-form-container{
 	text-align: -webkit-center;
 }
+
+.result-table-row:hover{
+	background-color: red;
+}

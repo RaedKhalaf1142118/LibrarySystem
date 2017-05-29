@@ -1,7 +1,13 @@
 <?php
 	switch ($_GET['display']) {
+		case 'bookDescription':
+			displayBookDescription();
+			break;
 		case 'viewContactUs':
 			displayUserMessages();
+			break;
+		case 'addBook':
+			displayAddBook();
 			break;
 		case 'editAccountInformation':
 			displayEditAccount();

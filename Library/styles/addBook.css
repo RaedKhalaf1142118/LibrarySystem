@@ -1,0 +1,35 @@
+.add-book-container{
+	padding-top: 130px;
+	margin-left: 15%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-align: -webkit-center;
+}
+.add-book-form-container{
+	background-color: #d7ffed;
+	box-shadow: 10px 10px 5px rgba(0,0,0,.3);
+	width: 30%;
+	padding: 30px 20px;
+}
+
+.add-book-container h3{
+	padding: 20px;
+}
+.add-book-container td{
+	padding: 10px 15px;
+}
+
+.add-book-container tr{
+	border-bottom: 1px gray solid;
+}
+
+.add-book-container table{
+	border-collapse: collapse;
+}
+
+.add-book-container input{
+	padding: 4px 5px;
+}
+
+.submit-row{
+	border-bottom: 0 !important;
+}

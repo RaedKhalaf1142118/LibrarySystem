@@ -8,7 +8,7 @@
 		$customer;
 		if(substr($username, 0, 5 ) === "Admin"){
 			$customer = dataBaseAdminLogin($username,$password);
-			if(sizeof($customer) > 0){
+			if($customer){
 				$_SESSION['admin'] = $username;
 				header("Refresh:0; url=index.php?display=search");
 			}else{
@@ -17,7 +17,7 @@
 			}
 		}else{
 			$customer = dataBaseAccountLogin($username,$password);
-			if(sizeof($customer) > 0){
+			if($customer){
 				$_SESSION['user'] = $username;
 				header("Refresh:0; url=index.php?display=search");
 			}else{
