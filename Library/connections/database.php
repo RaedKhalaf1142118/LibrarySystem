@@ -6,4 +6,7 @@
 	include 'connections/applicationServer/logoutServer.php';
 	include 'connections/applicationServer/RegisterServer.php';
 	include 'connections/applicationServer/SearchServer.php';
+	include 'connections/applicationServer/contactUsServer.php';
+	include 'connections/applicationServer/editAccountServer.php';
+	include 'connections/applicationServer/UserServer.php';
 ?>

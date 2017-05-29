@@ -46,29 +46,56 @@
 		<?php
 			if(isset($_SESSION['admin'])){
 				?>
-					<a href="index.php?display=AddBook">
-						<li class="main-nav-item <?php echo strcmp($_GET['display'],'search')==0?"selected-nav-item":""?>">
+					<a href="index.php?display=addBook">
+						<li class="main-nav-item <?php echo strcmp($_GET['display'],'addBook')==0?"selected-nav-item":""?>">
 							 Add Book
+						</li>
+					</a>
+					<a href="index.php?display=viewContactUs">
+						<li class="main-nav-item <?php echo strcmp($_GET['display'],'viewContactUs')==0?"selected-nav-item":""?>">
+							View Messages
+						</li>
+					</a>
+					<a href="index.php?display=search">
+						<li class="main-nav-item <?php echo strcmp($_GET['display'],'search')==0?"selected-nav-item":""?>">
+							 Search
 						</li>
 					</a>
 				<?php
 			}
 		?>
 
-		<a href="index.php?display=search">
-			<li class="main-nav-item <?php echo strcmp($_GET['display'],'search')==0?"selected-nav-item":""?>">
-				 Search
-			</li>
-		</a>
-		<a href="index.php?display=requestSubscription">
-			<li class="main-nav-item <?php echo strcmp($_GET['display'],'requestSubscription')==0?"selected-nav-item":""?>">
-				 Request subscription
-			</li>
-		</a>
-		<a href="index.php?display=contactUs">
-			<li class="main-nav-item <?php echo strcmp($_GET['display'],'contactUs')==0?"selected-nav-item":""?>">
-				 contact us
-			</li>
-		</a>
+		<?php
+			if(isset($_SESSION['user'])){
+		?>		
+				<?php 
+					if(isFeasibleAccount($_SESSION['user'])){
+				 ?>
+				<a href="index.php?display=search">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'],'search')==0?"selected-nav-item":""?>">
+						 Search
+					</li>
+				</a>
+				<a href="index.php?display=requestSubscription">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'],'requestSubscription')==0?"selected-nav-item":""?>">
+						 Request subscription
+					</li>
+				</a>
+				<a href="index.php?display=contactUs">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'],'contactUs')==0?"selected-nav-item":""?>">
+						contact us
+					</li>
+				</a>
+			<?php 
+				}
+			?>
+				<a href="index.php?display=editAccountInformation">
+					<li class="main-nav-item <?php echo strcmp($_GET['display'] ,'editAccountInformation')==0?"selected-nav-item":"";?>">
+						Edit Account
+					</li>
+				</a>
+		<?php
+			}
+		?>
 	</ul>
 </nav>

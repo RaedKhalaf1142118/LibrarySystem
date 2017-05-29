@@ -5,17 +5,25 @@
 		global $errorUserNameOrPassword;
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$customer = dataBaseLogin($username,$password);
-		if(sizeof($customer) > 0){
-			if(substr($username, 0, 5 ) === "Admin"){
+		$customer;
+		if(substr($username, 0, 5 ) === "Admin"){
+			$customer = dataBaseAdminLogin($username,$password);
+			if(sizeof($customer) > 0){
 				$_SESSION['admin'] = $username;
+				header("Refresh:0; url=index.php?display=search");
 			}else{
-				$_SESSION['user'] = $username;
+				$errorUserNameOrPassword = true;
+				displayLoginForm();
 			}
-			header("Refresh:0; url=index.php?display=search");
 		}else{
-			$errorUserNameOrPassword = true;
-			displayLoginForm();
+			$customer = dataBaseAccountLogin($username,$password);
+			if(sizeof($customer) > 0){
+				$_SESSION['user'] = $username;
+				header("Refresh:0; url=index.php?display=search");
+			}else{
+				$errorUserNameOrPassword = true;
+				displayLoginForm();
+			}
 		}
 	}
 

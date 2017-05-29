@@ -1,0 +1,19 @@
+.messages-container{
+	padding-top: 110px;
+	margin-left: 15%;
+	text-align: -webkit-center;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.messages{
+	width: 40%;
+	background-color: white;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	box-shadow: 10px 10px 5px rgba(0,0,0,.2);
+
+}
+
+.message-container{
+	margin: 40px;
+}

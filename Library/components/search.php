@@ -66,6 +66,8 @@
 		<?php
 	}
 	function displaySearch(){
+		if(!(isset($_SESSION['admin']) || isset($_SESSION['user'])))
+			header("Refresh:0;url=index.php?display=login");
 		global $name,$authors,$publishers,$ISBN;
 		if(isset($_POST['name'])){
 			$name = $_POST['name'];

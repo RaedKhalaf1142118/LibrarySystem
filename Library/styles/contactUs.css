@@ -1,0 +1,44 @@
+.contact-us-container{
+	padding-top: 135px;
+	background-color: rgba(107,226,107,.3);
+	height: 100vh;
+	text-align: -webkit-center;
+}
+
+.contact-us-form-container{
+	background-color: white;
+	background-color: white;
+	max-width: 500px;
+	margin-top: 50px;
+	margin-left: 50px;
+	padding-bottom: 10px;
+	box-shadow: 10px 10px 5px rgba(0,0,0,.5);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.contact-us-form [required]{
+	outline: none;
+	border: 1px gray solid;
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	margin-top: 10px;
+	font-size: 17px;
+	padding-left: 10px;
+}
+
+.contact-us-form [required]:focus{
+	background-color: rgba(0,0,0,0);
+}
+
+.contact-us-form textarea{
+	height: 100px !important;
+}
+.contact-us-form table{
+	margin-top: 30px;
+}
+
+.contact-us-form h3{
+	color: green;
+	padding-top: 20px;
+}

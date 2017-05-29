@@ -4,6 +4,9 @@
 	include 'components/login.php';
 	include 'components/register.php';	
 	include 'components/search.php';
+	include 'components/contactUs.php';
+	include 'components/editAccount.php';
+	include 'components/viewMessages.php';
 ?>
 
 <!DOCTYPE html>

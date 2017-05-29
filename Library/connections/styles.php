@@ -4,3 +4,5 @@
 <link rel="stylesheet" type="text/css" href="styles/login.css">
 <link rel="stylesheet" type="text/css" href="styles/register.css">
 <link rel="stylesheet" type="text/css" href="styles/search.css">
+<link rel="stylesheet" type="text/css" href="styles/contactUs.css">
+<link rel="stylesheet" type="text/css" href="styles/viewMessages.css">

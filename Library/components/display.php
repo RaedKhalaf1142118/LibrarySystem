@@ -1,5 +1,11 @@
 <?php
 	switch ($_GET['display']) {
+		case 'viewContactUs':
+			displayUserMessages();
+			break;
+		case 'editAccountInformation':
+			displayEditAccount();
+			break;
 		case 'login':
 			displayLogin();
 			break;
@@ -9,6 +15,7 @@
 		case 'requestSubscription':
 			break;
 		case 'contactUs':
+			displayContactUs();
 			break;
 		case 'logout':
 			logout();
